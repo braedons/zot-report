@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>ZotReport - Confirm</title>
+    </head>
+
+    <body>
+        <h2>{{ action }}:</h2> <br />
+        <table border = 1>
+            <tr>
+                {% for key in keys %}
+                    <th> {{ key[0] }} </th>
+                {% endfor %}
+            </tr>
+
+            {% for row in result %}
+                <tr>
+                    {% for elem in row %}
+                        <td> {{ elem }} </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            {{ keys }}
+      </table> <br /> <br /> <br />
+
+      <h2>All Entries:</h2> <br />
+      <table border = 1>
+            <tr>
+                {% for key in keys %}
+                    <th> {{ key[0] }} </th>
+                {% endfor %}
+            </tr>
+
+            {% for row in allentries %}
+                <tr>
+                    {% for elem in row %}
+                        <td> {{ elem }} </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+      </table>
+    </body>
+</html>
